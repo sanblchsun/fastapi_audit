@@ -1,4 +1,3 @@
-# app/models.py
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
 from app.database import Base
@@ -13,5 +12,6 @@ class ClientInfo(Base):
     os = Column(String, nullable=False)
     cpu = Column(String)
     ram_gb = Column(String)
-    ip_address = Column(String)
+    internal_ip = Column(String)  # Локальный IP клиента
+    external_ip = Column(String)  # IP, с которого пришел запрос
     created_at = Column(DateTime(timezone=True), server_default=func.now())

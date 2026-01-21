@@ -31,12 +31,13 @@ async def register_client(
         return {"status": "already_registered"}
 
     client = ClientInfo(
-        hostname=data["hostname"],
-        username=data["username"],
-        os=data["os"],
-        cpu=data.get("cpu"),
-        ram_gb=data.get("ram_gb"),
-        ip_address=get_client_ip(request),
+        hostname=str(data["hostname"]),
+        username=str(data["username"]),
+        os=str(data["os"]),
+        cpu=str(data.get("cpu")) if data.get("cpu") else None,
+        ram_gb=str(data.get("ram_gb")) if data.get("ram_gb") else None,
+        internal_ip=str(data.get("internal_ip")) if data.get("internal_ip") else None,
+        external_ip=str(get_client_ip(request)),  # IP, с которого пришел запрос
     )
 
     session.add(client)
