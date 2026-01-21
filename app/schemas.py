@@ -1,4 +1,3 @@
-# app/api/schemas.py
 from pydantic import BaseModel
 
 
@@ -8,3 +7,5 @@ class ClientInfoIn(BaseModel):
     os: str
     cpu: str | None = None
     ram_gb: str | None = None
+    ip_internal: str | None = None
+    ip_external: str | None = None
