@@ -1,4 +1,3 @@
-# app/config.py
 from typing import ClassVar
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -22,10 +21,8 @@ class Settings(BaseSettings):
 
     # === Безопасность ===
     SECRET_KEY: str
-    # ALGORITHM: ClassVar[str] = "HS256"
 
     # === Агенты ===
-
     FIRST_SUPERUSER: str
     FIRST_SUPERUSER_PASSWORD: str
 
