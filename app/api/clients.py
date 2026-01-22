@@ -1,3 +1,4 @@
+# app/api/clients.py
 from fastapi import APIRouter, Depends, Header, HTTPException, Request, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
